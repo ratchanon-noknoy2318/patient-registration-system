@@ -1,49 +1,57 @@
-# KPPMCH Patient Registration | LINE Telemedicine & HIS Data Pipeline
+# Patient Registration System (KPPMCH)
 
-| PROJECT ARCHITECTURE OVERVIEW |
-| :--- |
-| **High-Level System Design & Clinical Integration for Municipal Healthcare** |
-| [![Project Header](https://kppmch-register.vercel.app/og-image.png)](https://kppmch-register.vercel.app/) |
+This system helps patients register for healthcare using their mobile phones. It connects patient information directly to the hospital staff through the LINE application.
 
 ---
 
-### 1. HEALTHCARE TECHNOLOGY ARCHITECTURE (HIS)
-| Layer | Technology Stack | Architectural Responsibility |
+### 1. How it Helps (Benefits)
+This system makes hospital work faster and easier for both patients and nurses.
+
+| Old Way | New Way (This System) | Result |
 | :--- | :--- | :--- |
-| **Client Interface** | Next.js Web App | Patient Identity Entry & UI Sanitization |
-| **Cloud Gateway** | LINE Messaging API | Event-Driven Webhook & Metadata Capture |
-| **Serverless Logic** | Google Apps Script (GAS) | Regex Validation, API Routing & Logic Execution |
-| **Cloud Database** | Google Sheets API | Scalable Lightweight NoSQL-style Data Storage |
-| **Business Intelligence** | Looker Studio Dashboards | Real-time Clinical KPI & Triage Abstraction |
+| Paper forms | Online form (Next.js) | Easy to read and no mistakes |
+| Manual delivery | LINE notification | Nurses see data immediately |
+| Counting by hand | Automatic charts | Clear daily reports |
 
 ---
 
-### 2. CLINICAL IMPLEMENTATION & GOVERNANCE
-| Aspect | Implementation Methodology | Technical Detail |
+### 2. How it Works (Simple Tech)
+We use simple and reliable tools to make sure the system always works.
+
+| Tool | Role | Why we use it |
 | :--- | :--- | :--- |
-| **Requirement** | Nursing Frontline Driven | Developed from Senior Professional Nurse needs |
-| **Agility** | Rapid Adaptation Lifecycle | Fast-track development for Hospital Operations |
-| **Data Isolation** | Multi-tenant Ward Design | Automatic segregation via LINE Group ID context |
-| **Cybersecurity** | TLS 1.3 & Thailand PDPA | Encryption in transit & Minimal Data Privacy |
+| **Next.js** | Website | Works fast on any smartphone |
+| **LINE API** | Messaging | Everyone uses LINE; no need to learn new apps |
+| **Google Apps Script** | Logic | Checks and moves data automatically |
+| **Google Sheets** | Database | Safe and easy to organize data |
 
 ---
 
-### 3. OFFICIAL VERIFICATION & PUBLIC RECORDS
-| Validation Type | Evidence Link |
+### 3. Safety and Trust
+We follow strict rules to protect patient information.
+
+| Topic | Detail |
 | :--- | :--- |
-| **Clinical Deployment** | [Official Hospital Implementation News](https://www.kppmu.go.th/news-detail?hd=1&id=124000) |
-| **Security Compliance** | [Official Cybersecurity & PDPA Record](https://www.kppmu.go.th/news-detail?hd=1&id=126854) |
-| **Executive Approval** | **Verified by Kamphaeng Phet Municipal Secretary** |
+| **Nurse Verified** | Designed with help from senior professional nurses |
+| **Privacy** | Follows PDPA laws to keep personal data safe |
+| **Security** | Information is protected during transmission |
+| **Official** | Approved by the Municipal Secretary |
 
 ---
 
-### 4. CONTACT & PROFESSIONAL CREDITS
-| Attribute | Professional Reference |
+### 4. Official Links
+| Type | Link |
 | :--- | :--- |
-| **Solution Architect** | Ratchanon Noknoy |
-| **LinkedIn Profile** | [linkedin.com/in/ratchanon-noknoy](https://www.linkedin.com/in/ratchanon-noknoy/) |
-| **GitHub Portfolio** | [github.com/ratchanon-noknoy2318](https://github.com/ratchanon-noknoy2318) |
-| **License** | MIT © 2026 |
+| **Project News** | [Official Hospital Website](https://www.kppmu.go.th/news-detail?hd=1&id=124000) |
+| **Security Report** | [Official Security Record](https://www.kppmu.go.th/news-detail?hd=1&id=126854) |
 
 ---
-<p align="center"><small>All project requirements for this project were directly defined by Senior Professional Nurses (Specialist Level).</small></p>
+
+### 5. Contact Information
+| Name | Link |
+| :--- | :--- |
+| **Ratchanon Noknoy** | [LinkedIn Profile](https://www.linkedin.com/in/ratchanon-noknoy/) |
+| **Portfolio** | [GitHub Profile](https://github.com/ratchanon-noknoy2318) |
+
+---
+**Note:** This system was built to meet the real needs of hospital nurses.
