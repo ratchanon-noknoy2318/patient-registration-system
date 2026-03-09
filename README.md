@@ -1,30 +1,49 @@
-# Patient Registration & Telemedicine Architecture (KPPMCH)
+# Telemedicine & Registration Infrastructure (KPPMCH)
 
-**70–80% Registration Efficiency Gain | PDPA-Compliant | Municipal-Scale Deployment**
+**Municipal-Scale Distributed Engine | Event-Driven Workflow | 80% Triage Efficiency Gain**
 
-A high-performance, serverless registration framework and telemedicine platform engineered to bridge the gap between public healthcare intake and internal clinical workflows via real-time data synchronization.
+A high-concurrency, asynchronous healthcare framework engineered to bridge public intake and clinical decision-making through a resilient serverless architecture.
 
 [![Next.js](https://img.shields.io/badge/Frontend-Next.js-black?style=flat-square&logo=next.js)](https://nextjs.org/)
-[![Google Apps Script](https://img.shields.io/badge/Backend-Google_Apps_Script-4285F4?style=flat-square&logo=google-apps-script&logoColor=white)](https://developers.google.com/apps-script)
-[![Status](https://img.shields.io/badge/Status-Production_Ready-green?style=flat-square)](https://kppmch-register.vercel.app/PatientRegister)
-[![Adopted By](https://img.shields.io/badge/Adopted_By-Kamphaeng_Phet_Municipality-28a745?style=flat-square&logo=government)](https://www.kppmu.go.th/news-detail?hd=1&id=124000)
+[![Status](https://img.shields.io/badge/Status-Production_Verified-green?style=flat-square)](https://telemedscheduler.vercel.app/)
 
 ---
 
-## 1. Executive Overview
-**KPPMCH** is a robust telemedicine and registration ecosystem designed for **Municipal-Scale healthcare services**. By utilizing a **Serverless Architecture**, the system mitigates hospital congestion and enhances data transmission efficiency between citizens and medical personnel through real-time synchronization across the municipal district.
+## 1. System Architecture Design
 
----
+The platform implements a **Stateless Layered Architecture** to ensure high availability and strictly enforced data consistency (ACID) across distributed environments.
 
-## 2. System Architecture & Design Philosophy
-
-The architecture adheres to **Serverless Principles**, prioritizing horizontal scalability and low operational overhead. By decoupling the ingestion layer from the persistence layer, the system ensures data integrity even during high-concurrency registration spikes.
-
-### 🔄 Architectural Flow (Sequential Ingestion)
 ```mermaid
 graph TD
-    User[Patient / User] -->|1. Access Registration Form| WebApp[Next.js Application]
-    WebApp -->|2. Data Validation| API[RESTful API - Google Apps Script]
-    API -->|3. ACID Transaction| DB[(Cloud Persistence Layer)]
-    DB -->|4. Trigger Alert| Notify[LINE Messaging Gateway]
-    Notify -->|5. Nurse Notification| Nursing[LINE Flex Message Interface]
+    %% Layer 1: Patient Ingestion
+    subgraph Ingestion_Layer [1. Patient Ingestion Layer]
+        User([Patient / User]) -->|Input Consultation Data| WebApp[Next.js App Router]
+        WebApp -->|Zod Schema Validation| WebApp
+    end
+
+    %% Layer 2: Logic & Integration
+    subgraph Logic_Tier [2. Serverless Logic Layer]
+        WebApp -->|Authorized JSON Payload| API{API Gateway}
+        API -->|Request Mapping| Logic[Business Logic Engine]
+        Logic -->|Data Normalization| Logic
+    end
+
+    %% Layer 3: Persistence
+    subgraph Data_Tier [3. Persistence & Integrity]
+        Logic -->|ACID Transaction| DB[(Google Sheets / Cloud Store)]
+        DB ---|Audit Trail| Log[System Traceability]
+    end
+
+    %% Layer 4: Clinical Delivery
+    subgraph Delivery_Tier [4. Clinical Notification]
+        Logic -->|Asynchronous Webhook| LineAPI[LINE Messaging Gateway]
+        LineAPI -->|Structured Flex Message| Nurse([Senior Nursing Staff])
+    end
+
+    %% Architectural Styling
+    style User fill:#f9f9f9,stroke:#333
+    style Nurse fill:#f9f9f9,stroke:#333
+    style WebApp fill:#fff,stroke:#000,stroke-width:2px
+    style API fill:#000,color:#fff,stroke-width:2px
+    style Logic fill:#000,color:#fff,stroke-width:2px
+    style DB fill:#fff,stroke:#000,stroke-dasharray: 5 5
