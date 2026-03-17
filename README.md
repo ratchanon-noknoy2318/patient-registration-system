@@ -1,37 +1,76 @@
 # Telemedicine Intake System
-**High-efficiency patient data acquisition and screening platform using Google Sheets.**
 
-## Overview
+Web platform for automating patient intake and screening for telemedicine services.
 
-The **Telemedicine Intake System** is engineered to eliminate manual bottlenecks in patient registration. By digitizing the initial intake process, the system ensures that healthcare providers receive structured clinical data and signed consents before the consultation begins, reducing administrative latency and improving data accuracy.
+The system collects patient registration data, consent forms, and screening information before consultations begin. It reduces administrative workload for healthcare staff and improves the accuracy of patient records.
 
-The system is used to support telemedicine services operated by **Kamphaeng Phet Municipality** in Thailand, where healthcare teams provide remote consultations and monitoring for community patients, including elderly and homebound individuals.
+Used in telemedicine services operated by Kamphaeng Phet Municipality, Thailand.
 
-Evidence of municipal telemedicine deployment:
-https://www.kppmu.go.th/news-detail?hd=1&id=124000
+---
 
+## Problem
+
+Telemedicine appointments required nurses to manually collect:
+
+- patient registration details
+- consent forms
+- preliminary screening information
+
+This created administrative bottlenecks and delayed consultations.
+
+---
+
+## Solution
+
+This system digitizes the intake workflow by:
+
+- providing an online patient intake form
+- validating and structuring patient data
+- automatically storing records in Google Sheets
+- allowing staff to review intake data before consultations
+
+---
 
 ## Architecture
 
-| Layer | Description |
-| :--- | :--- |
-| **Pattern** | Stateless Layered Architecture |
-| **Flow** | [User] -> [Frontend] -> [API] -> [Google Sheets] |
-| **Integrations** | Google Sheets API |
+```
+Patient
+   ↓
+Next.js Web App
+   ↓
+API Routes
+   ↓
+Google Sheets
+```
+
+---
 
 ## Tech Stack
 
-| Component | Technology |
-| :--- | :--- |
-| **Frontend** | Next.js (App Router), TailwindCSS |
-| **Backend** | Node.js (REST APIs) |
-| **Database** | Google Sheets |
+- Next.js
+- Node.js
+- Google Sheets API
+- TailwindCSS
+
+---
 
 ## Project Structure
 
-| Directory | Description |
-| :--- | :--- |
-| `app/` | Core application logic, routing, UI components, and API handlers. |
+```
+app/   Next.js application (UI, routing, API routes)
+```
+
+---
+
+## Deployment Context
+
+The system supports municipal telemedicine services operated by Kamphaeng Phet Municipality in Thailand.
+
+Example deployment reference:
+https://www.kppmu.go.th/news-detail?hd=1&id=124000
+
+---
 
 ## License
-Distributed under the MIT License.
+
+MIT
