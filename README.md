@@ -1,49 +1,62 @@
 # Telemedicine Intake System
 
-Backend-driven web platform for automating patient intake and screening in telemedicine services.
+A production-grade web platform for automating patient intake and pre-consultation screening in telemedicine workflows.
 
-The system digitizes patient registration, consent collection, and pre-consultation screening — enabling healthcare staff to access structured patient data before consultations begin.
+Designed to streamline patient onboarding, reduce administrative overhead, and provide healthcare staff with structured patient data prior to consultations.
 
-Used in real municipal telemedicine operations in Thailand.
+Deployed and actively used in municipal healthcare operations in Kamphaeng Phet, Thailand.
+
+---
+
+## Overview
+
+The system digitizes and standardizes the telemedicine intake process, replacing manual, paper-based workflows with an automated, structured, and validation-driven pipeline.
+
+It enables:
+
+- Digital patient registration
+- Consent collection
+- Pre-consultation screening
+- Structured data access for healthcare staff
 
 ---
 
 ## Impact
 
-* Reduced manual patient intake workload by **~80%**
-* Eliminated paper-based intake process
-* Enabled pre-consultation access to structured patient data
-* Improved data accuracy and consistency for clinical workflows
-* Deployed and used in **real-world municipal healthcare services**
+- Reduced patient intake workload by ~80%
+- Eliminated paper-based intake workflows
+- Improved data consistency and accuracy
+- Enabled faster and more efficient consultations
+- Successfully deployed in real-world municipal healthcare operations
 
 ---
 
 ## Problem
 
-Telemedicine appointments required healthcare staff to manually collect:
+Traditional telemedicine intake workflows relied on manual processes where healthcare staff had to:
 
-* Patient registration details
-* Consent forms
-* Preliminary screening information
+- Collect patient registration details manually  
+- Handle consent documentation  
+- Perform preliminary screening  
 
-This resulted in:
+This led to:
 
-* Administrative bottlenecks
-* Delays in patient consultations
-* Inconsistent and error-prone data collection
-* Increased workload for nurses and staff
+- Operational bottlenecks  
+- Increased consultation latency  
+- Inconsistent and error-prone data  
+- High administrative burden on staff  
 
 ---
 
 ## Solution
 
-Designed and built a web-based intake system to digitize patient onboarding and screening workflows:
+A web-based intake system that digitizes and automates the entire onboarding workflow:
 
-* Provided an online intake interface for patients
-* Structured and validated input data before submission
-* Automated data collection and storage pipeline
-* Enabled healthcare staff to review patient data before consultations
-* Reduced manual data entry and operational overhead
+- Online intake form for patients  
+- Input validation to ensure data quality  
+- Automated data collection pipeline  
+- Centralized structured storage  
+- Pre-consultation data access for healthcare staff  
 
 ---
 
@@ -63,68 +76,75 @@ Patient submits intake form via web interface:
 [Healthcare Staff Review]
 ```
 
-### Key Considerations
 
-* Ensured **data correctness** for clinical usage through validation
-* Designed the system based on requirements from nursing staff to support clinical workflows.
-* Integrated with existing healthcare workflows without disruption
-* Prioritized simplicity for non-technical users
+
+### Design Considerations
+
+- Data validation enforced at submission to ensure clinical reliability  
+- Built based on real requirements from nursing staff  
+- Integrated seamlessly into existing healthcare workflows  
+- Optimized for usability by non-technical users  
+- Prioritized simplicity, reliability, and maintainability  
 
 ---
 
 ## Tech Stack
 
 **Frontend / Backend**
+- Next.js (App Router)
+- Node.js
 
-* Next.js
-* Node.js
-
-**Data**
-
-* Google Sheets API
+**Data Layer**
+- Google Sheets API
 
 **UI**
-
-* TailwindCSS
+- TailwindCSS
 
 ---
 
-## Design Decisions
+## Architecture & Design Decisions
 
-* **Google Sheets as storage**
+**Google Sheets as a data store**
+- Chosen for rapid deployment and accessibility
+- Eliminates need for complex database infrastructure
+- Allows non-technical stakeholders to inspect data directly
 
-  * Chosen for rapid deployment and accessibility by non-technical staff
-  * Reduced need for complex infrastructure in early-stage deployment
+**Monolithic Next.js architecture**
+- Simplifies development and deployment
+- Reduces system complexity
+- Supports fast iteration cycles
 
-* **Monolithic Next.js architecture**
-
-  * Simplified development and deployment
-  * Enabled fast iteration under time constraints
-
-* **Form-based workflow**
-
-  * Optimized for usability in real-world clinical environments
+**Form-driven workflow**
+- Aligns with clinical intake processes
+- Minimizes training requirements for users
+- Ensures consistent data structure
 
 ---
 
 ## Challenges
 
-* Handling unstructured patient input data and ensuring consistency
-* Designing a system usable by non-technical healthcare staff
-* Ensuring data accuracy for clinical decision-making
-* Integrating digital workflows into existing manual processes
-* Balancing simplicity with reliability in a production environment
+- Handling unstructured and inconsistent user input  
+- Designing for non-technical healthcare users  
+- Ensuring data accuracy for clinical workflows  
+- Integrating with existing manual processes without disruption  
+- Balancing simplicity with production reliability  
 
 ---
+
+## Deployment
+
+The system is deployed and actively used in municipal telemedicine operations in Kamphaeng Phet, Thailand, supporting real-world patient intake and pre-consultation screening workflows.
+
+---
+
 
 ## Project Structure
 
 ```
 app/   Next.js application (UI, routing, API routes)
 ```
-
 ---
 
-## Deployment Context
+## References
 
-The system is deployed in real municipal telemedicine operations in Kamphaeng Phet, Thailand, providing structured patient intake and pre-consultation screening for local healthcare services. [Reference](https://www.kppmu.go.th/news-detail?hd=1&id=124000)
+- Municipal announcement: https://www.kppmu.go.th/news-detail?hd=1&id=124000
